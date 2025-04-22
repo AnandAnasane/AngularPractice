@@ -1,0 +1,67 @@
+<nav class="navbar navbar-expand-lg bg-black mb-5">
+    <div class="container-fluid">
+        <a class="navbar-brand  text-danger border rounded py-1 px-3 fs-4 bg-white" routerLink="#">Angular.in</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item dropdown">
+                <a class="nav-link text-white dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" aria-current="page" routerLink="">Directives</a>
+                <ul class="dropdown-menu dropdown-menu-dark">
+                  <li><a class="dropdown-item" routerLink="structural-Dir">Structural</a></li>
+                  <li><a class="dropdown-item" routerLink="attribute-Dir">Attribute</a></li>
+                  <li><a class="dropdown-item" routerLink="component-Dir">Component</a></li>
+                  <li><a class="dropdown-item" routerLink="ng-template-Dir">ng-Template</a></li>
+                </ul>
+              </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" routerLink="databinding">DataBinding</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link text-white dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" aria-current="page" routerLink="">Control-Flow</a>
+                    <ul class="dropdown-menu dropdown-menu-dark">
+                      <li><a class="dropdown-item" routerLink="if-else">IF-Else</a></li>
+                      <li><a class="dropdown-item" routerLink="for">For</a></li>
+                      <li><a class="dropdown-item" routerLink="Switch-case">Switch</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" routerLink="pipe">Pipe</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link text-white dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" aria-current="page" routerLink="">Forms</a>
+                  <ul class="dropdown-menu dropdown-menu-dark">
+                    <li><a class="dropdown-item" routerLink="template-forms">Template-Forms</a></li>
+                    <li><a class="dropdown-item" routerLink="reactive-forms">Reactive-Forms</a></li>
+                    <li><a class="dropdown-item" routerLink="practice-reactive-form">Practice-Reactive-Forms</a></li>   
+                    <li><a class="dropdown-item" routerLink="advance-reactive-form">Advance-Reactive-Forms</a></li>  
+                  
+                  </ul>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link text-white dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" aria-current="page" routerLink="">APIs</a>
+                  <ul class="dropdown-menu dropdown-menu-dark">
+                    <li><a class="dropdown-item" routerLink="get-api">GET</a></li>
+                    <li><a class="dropdown-item" routerLink="post-api">POST</a></li>   
+                    <li><a class="dropdown-item" routerLink="update_and_delete_api">UPDATE(put) & DELETE</a></li>   
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-white" aria-current="page" routerLink="services">Service</a>
+                </li> 
+                <li class="nav-item">
+                  <a class="nav-link text-white" aria-current="page" routerLink="life-cycle-events">LifeCycleEvents</a>
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link text-white" aria-current="page" routerLink="ngRx-state-management">NgRx</a>
+                </li>        
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<router-outlet></router-outlet>
+

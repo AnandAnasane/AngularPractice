@@ -1,0 +1,98 @@
+<div class="container">
+    <h1 class="text-center bg-secondary p-3 text-white">Control Flow Statements <span>&#64;</span>IF-Else ,<span>&#64;</span>For, <span>&#64;</span>Switch</h1> 
+</div>
+
+<div class="container border p-5 my-5">
+    <div class="container d-flex justify-content-center">
+        <h4 class="text-center bg-primary rounded p-2 text-white col-6 mb-5"><span>&#64;</span>If-Else-IF / <span>&#64;</span>For/ <span>&#64;</span>Switch Control Flow</h4>
+    </div>
+    <div class="row">
+        <div class="col-3">
+            @if(isDiv1Visible){
+                <div class="bg-danger p-3 text-center">
+                    <h4>Div1</h4>
+                </div>
+            }
+        </div>
+        <div class="col-3">
+            @if(isDiv2toggle){
+                <div class="bg-success p-3 text-center">
+                    <h4>Div2 success</h4>
+                </div>
+            }@else {
+                <div class="bg-warning p-3 text-center">
+                    <h4>Div2 warning</h4>
+                </div>
+            }
+        </div>
+        <div class="col-3">
+           @if(num1 === num2){
+            <div class="bg-secondary p-3 text-center">
+                <h4>Div3 num matched</h4>
+            </div>
+           }
+        </div>
+        <div class="col-3">
+            @if(div3Status == 'active'){
+                <div class="bg-success p-3 text-center">
+                    <h4>Activate</h4>
+                </div>
+            }@else if (div3Status == 'deactive') {
+                <div class="bg-danger p-3 text-center">
+                    <h4>De-Activate</h4>
+                </div>
+            }@else if (div3Status == 'pending') {
+                <div class="bg-warning p-3 text-center">
+                    <h4>Pending</h4>
+                </div>
+            }@else{
+                <div class="bg-primary p-3 text-center">
+                    <h4>Enter your Status</h4>
+                </div>
+            }
+        </div>
+
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-3">
+            <div class="text-center">
+                <button class="btn btn-success me-3" (click)="showDiv1()">Show</button>
+                <button class="btn btn-warning" (click)="hideDiv1()">Hide</button>  
+            </div>
+            <div class="ms-3 my-3">
+                <p>This is 'IF' control flow Statement</p>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="text-center">
+                <button class="btn btn-success" (click)="toggleDiv2()">Toggle</button>
+            </div>
+            <div class="ms-3 my-3">
+                <p>This is 'IF-Else' control flow Statement</p>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="text-center">
+                <input type="text" [(ngModel)]="num1" class="col-6" placeholder="number-1">
+                <input type="text" [(ngModel)]="num2" class="col-6" placeholder="number-2">
+            </div>
+            
+            <div class="ms-3 my-3">
+                <p>This is 'IF' control flow Statement</p>
+            </div>
+        </div>
+        <div class="col-3">
+            <select [(ngModel)]="div3Status"  name="" id="">
+                <option value="active">Activate</option>
+                <option value="deactive">De-Activate</option>
+                <option value="pending">Pending</option>
+            </select>
+
+            <div class="ms-3 my-3">
+                <p>This is 'Else-IF' control flow Statement</p>
+                
+            </div>
+        </div>
+    </div>
+</div>

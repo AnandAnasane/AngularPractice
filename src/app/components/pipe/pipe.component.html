@@ -1,0 +1,104 @@
+<div class="container">
+    <h1 class="text-center bg-secondary p-3 text-white">Pipe in Angular</h1>
+    <h5 class="text-center bg-secondary p-3 text-white">Default pipe and Custom Pipe</h5>
+</div>
+
+
+
+
+<div class="container border p-5 my-5">
+    <div class="container d-flex justify-content-center">
+        <h4 class="text-center bg-primary rounded p-2 text-white col-4 mb-5">Default Pipes</h4>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            <p class="text-danger">UpperCase Pipe</p>
+            Original Value: - {{firstText}}
+            <br>
+            After Pipe: - {{firstText | uppercase}}
+
+        </div>
+        <div class="col-4">
+            <p class="text-danger">LowerCase Pipe</p>
+            Original Value: - {{firstText}}
+            <br>
+            After Pipe: - {{firstText | lowercase}}
+        </div>
+        <div class="col-4">
+            <p class="text-danger">TitleCase Pipe</p>
+            Original Value: - {{thirdText}}
+            <br>
+            After Pipe: - {{thirdText | titlecase}}
+        </div>
+    </div>
+    
+    <hr>
+
+    <div class="row">
+        <div class="col-4">
+            <p class="text-danger">Date pipe</p>
+            Original Value: - {{currentDate}}
+            <br>
+            After Pipe: - {{currentDate | date}}
+
+        </div>
+        <div class="col-4">
+            <p class="text-danger">Date pipe diff type</p>
+            Original Value: - {{currentDate}}
+            <br>
+            After Pipe: - {{currentDate | date:'dd-mm-yy'}} <br>
+            After Pipe: - {{currentDate | date:'dd-MMM-yy'}}
+        </div>
+        <div class="col-4">
+            <p class="text-danger">Currency Pipe</p>
+            Original Value: - {{currency}}
+            <br>
+            After Pipe: - {{currency | currency: 'INR'}}
+        </div>
+    </div>
+   <hr>
+   <div class="row">
+    <div class="col-4">
+        <p class="text-danger">JSON pipe</p>
+        Original Value: - {{student}}
+        <br>
+        After Pipe: - {{student | json}}
+
+    </div>
+    <div class="col-4">
+        <p class="text-danger">Async Pipe</p>
+        Original Value: - {{currentTime}};
+        <br>
+        After Pipe: -{{currentTime | async}}
+    </div>
+    <div class="col-4">
+        <p class="text-danger">Multiple pipes at one time</p>
+        Execution of pipes left to right <br>
+        Original Value: - {{currentTime}}
+        <br>
+        After Pipe: - {{currentTime | async | date:'hh:mm:ss'}}
+    </div>
+</div>
+   
+</div>
+
+
+
+<div class="container border p-5 my-5">
+    <div class="container d-flex justify-content-center">
+        <h4 class="text-center bg-primary rounded p-2 text-white col-4 mb-5">Custom Pipes</h4>
+    </div>
+
+    <div class="row">
+        <div class="col-4">
+            Original Value: - {{employee.state}} 
+            <br>
+            After Pipe: state:-{{employee.state | na}}
+            <p class="text-danger">Here, we use custom pipes - IF the value of State is  null,undefined or empty it will print NA rather than print nothing</p>
+
+        </div>
+        
+    </div>
+   
+</div>
+

@@ -1,0 +1,60 @@
+<div class="container">
+  <h1 class="text-center bg-secondary p-3 text-white">
+    Control Flow Statements <span>&#64;</span>IF-Else ,<span>&#64;</span>For,
+    <span>&#64;</span>Switch
+  </h1>
+</div>
+
+<div class="container p-5">
+  <div class="container border p-5 my-5">
+    <div class="container d-flex justify-content-center">
+      <h4 class="text-center bg-primary rounded p-2 text-white col-6 mb-5">
+        <span>&#64;</span>Switch case statement</h4>
+    </div>
+
+    <div class="row">
+        <div class="col-3">
+            Enter Number from 1 to 7 to get Day's details
+            <input type="text" [(ngModel)]="dayNumber">
+        </div>
+        <div class="col-3">
+            @switch (dayNumber) {
+                @case ('1') {
+                    <span>Monday</span>
+
+                }
+                @case ('2') {
+                    <span>Tuesday</span>
+
+                }
+                @case ('3') {
+                    <span>Wednesday</span>
+
+                }
+                
+                @case ('4') {
+                    <span>Thursday</span>
+
+                }
+                @case ('5') {
+                    <span>Friday</span>
+
+                }
+                @case ('6') {
+                    <span>Saturday</span>
+
+                }
+                @case ('7') {
+                    <span>Sunday</span>
+
+                }
+                @default {
+                    <span>Please enter the number between 1 and 7</span>
+                }
+            } 
+        </div>
+      </div>
+  </div>
+
+  
+</div>

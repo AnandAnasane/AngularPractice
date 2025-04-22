@@ -1,0 +1,62 @@
+<div class="container">
+    <h1 class="text-center bg-secondary p-3 text-white">Control Flow Statements <span>&#64;</span>IF-Else ,<span>&#64;</span>For, <span>&#64;</span>Switch</h1> 
+</div>
+
+<div class="container p-5">
+    <div class="container border p-5 my-5">
+        <div class="container d-flex justify-content-center">
+            <h4 class="text-center bg-primary rounded p-2 text-white col-6 mb-5"><span>&#64;</span>For</h4>
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <ul>
+                    @for (item of cityarray; track $index) {
+                        <li>{{item}}</li>
+                    }
+                </ul>
+            </div>
+            <div class="col-3">
+                @for (item of cityarray; track $index) {
+                    <div>{{item}}</div>
+                }
+            </div>
+            <div class="col-3">
+                <select>
+                    @for (item of cityarray; track $index) {
+                        <option value="">{{item}}</option>
+                    }
+                </select>
+            </div>
+            <div class="col-3">
+                <select>
+                    @for (item of student; track $index) {
+                        <option [value]="item.studId">{{item.name}}</option>
+                    }
+                </select>
+            </div>
+            <div class="col-6">
+                <table  class="table table-bordered shadow">
+                    <thead>
+                        <tr>
+                            <th>Sr. no</th>
+                            <th>Name</th>
+                            <th>City</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for (item of student; track $index) {
+                            <tr >
+                                <td>{{$index+1}}</td>
+                                <td>{{item.name}}</td>
+                                <td>{{item.city}}</td>
+                                <td>{{item.isActive}}</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+          
+        </div>
+    </div>   
+</div>

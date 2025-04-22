@@ -1,0 +1,56 @@
+<app-alert [alertType]="'Warning'" [message]="'Welcome to the POST API Page..!'"></app-alert>
+
+<app-alert [alertType]="'IMPORTANT!!'" [message]="'This alert message is done by using INPUT decorator with the help of Reusable Coponents'"></app-alert>
+
+ 
+<app-my-button [btnClass]="'btn btn-success ms-5'" (onBtnClick)="getData($event)"  [btnText]="'From Child'"></app-my-button>
+------THis button is from Child Decorator
+<div class="container">
+    <h1 class="text-center bg-secondary p-3 text-white">API Fetching (GET, POST, PUT, DELETE )</h1>
+</div>
+<div class="container">
+    <div class="container d-flex justify-content-center">
+        <h4 class="text-center bg-primary rounded p-2 text-white col-3 my-3">POST METHOD</h4>
+    </div>
+    <div class="row">
+        <div class="col-7">
+            <h4 class="bg-success p-2 text-white rounded">Department List</h4>
+            <table class="col-12 table-success table-bordered">
+                <thead class=" text-center">
+                    <tr>
+                        <th>Sr.</th>
+                        <th>Department Name</th>
+                        <th>City</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for (item of deptList; track $index) {
+                    <tr>
+                        <td>{{$index+1}}</td>
+                        <td>{{item.departmentName}}</td>
+                        <td>{{item.departmentLogo}}</td>
+                    </tr>
+                }
+                </tbody>
+            </table>
+        </div>
+        <div class="col-4">
+            <h4 class="bg-secondary p-2 text-white rounded">New Department</h4>
+            <div class="col-12 border p-3">
+                Department name
+                <input type="text" [(ngModel)]="departmentObj.departmentName" class="col-12">
+                Department City
+                <input type="text" [(ngModel)]="departmentObj.departmentLogo" class="col-12">
+                <div class="text-center mt-3">
+                    <!-- This is Simple Button -->
+                    <!-- <button type="reset" class="btn btn-secondary me-3 col-5" (click)="resetform()">Reset</button> -->
+
+                    <!-- // This is Reusable Button  -->
+                    <app-my-button [btnClass]="'btn btn-secondary me-3 col-5'" [btnText]="'Reset'" (onBtnClick)="resetform()"></app-my-button>
+                    <button type="submit" class="btn btn-success  col-5" (click)="onSave()">Save</button>
+                    <p class="text-danger">Here reset button use OUTPUT decoration as a reusable button</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

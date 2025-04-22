@@ -1,0 +1,45 @@
+<app-alert [alertType]="'success'" [message]="'Welcome to the GET API Page...!! '"></app-alert>
+<app-alert [alertType]="'IMPORTANT!!'" [message]="'This alert message is done by using INPUT decorator with the help of Reusable Coponents'"></app-alert>
+<app-alert [alertType]="'Information!!!'" [message]="newAlertMsg"></app-alert>
+<button class="ms-5 btn btn-primary" (click)="changeMsg()">change info</button>
+
+
+
+<div class="container">
+    <h1 class="text-center bg-secondary p-3 text-white">API Fetching (GET, POST, PUT, DELETE )</h1>
+</div>
+
+
+<div class="container">
+    <div class="container d-flex justify-content-center">
+        <h4 class="text-center bg-primary rounded p-2 text-white col-3 my-3">GET METHOD</h4>
+    </div>
+    
+    <div>
+        <button class="btn btn-success mb-3" (click)="getAllthedetails()">Get User</button>
+    </div>
+    <div>
+        <table class="table table-bordered">
+                <thead class="table-success">
+                    <tr class="text-center bg-success">
+                        <th >NAME</th>
+                        <th>USERNAME</th>
+                        <th>EMAIL</th>
+                        <th>PHONE</th>
+                        <th>WEBSITE</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for (item of details; track $index) {
+                        <tr>
+                            <td>{{item.name}}</td>
+                            <td>{{item.username}}</td>
+                            <td>{{item.email}}</td>
+                            <td>{{item.phone}}</td>
+                            <td>{{item.website}}</td>                            
+                        </tr>
+                    }
+                </tbody>
+        </table>        
+    </div> 
+</div>

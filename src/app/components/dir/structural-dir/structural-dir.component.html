@@ -1,0 +1,134 @@
+<div class="container">
+    <h1 class="text-center bg-secondary p-3 text-white">Structural Directives</h1>
+    <button class="btn btn-primary mt-3" [routerLink]="['/attribute-Dir']">Go to Attribute</button>
+</div>
+
+
+
+
+<div class="container border p-5 my-5">
+    <div class="container d-flex justify-content-center">
+        <h4 class="text-center bg-primary rounded p-2 text-white col-4 mb-5">*NgIf Directives</h4>
+    </div>
+    <div class="row">
+        <div *ngIf="isDiv1visible" class="col-3">
+            <div class="bg-danger p-3 text-center">
+                <h4>Div1</h4>
+            </div>
+        </div>
+        <div *ngIf="isDiv2toggle" class="col-3">
+            <div class="bg-success p-3 text-center">
+                <h4>Div2</h4>
+            </div>
+        </div>
+        <div *ngIf=" num1 == num2" class="col-3">
+            <div class="bg-secondary p-3 text-center">
+                <h4>Div3</h4>
+            </div>
+        </div>
+        <div *ngIf="selectedState == 'usa'" class="col-3">
+            <div class="bg-warning p-3 text-center">
+                <h4>Div4</h4>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-3">
+            <div class="text-center">
+                <button class="btn btn-success me-3" (click)="showDiv1()">Show</button>
+                <button class="btn btn-warning" (click)="hideDiv1()">Hide</button>  
+            </div>
+            <div class="ms-3 my-3">
+                <p class="">Here, we added to different of different functionalities...!!</p>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="text-center">
+                <button class="btn btn-success" (click)="toggleDiv2()">Toggle</button>
+            </div>
+            <div class="ms-3 my-3">
+                <p class="">Here,we can hide and show with tyhe single button (TOGGLE)</p>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="text-center">
+                <input type="text" [(ngModel)]="num1" class="col-6" placeholder="number-1">
+                <input type="text" [(ngModel)]="num2" class="col-6" placeholder="number-2">
+            </div>
+            
+            <div class="ms-3 my-3">
+                <p class="">Here, If the input number/string is same then div will visible otherwise it will be invisible</p>
+            </div>
+        </div>
+        <div class="col-3">
+            
+                <input [(ngModel)]="isActive" type="checkbox" class="mx-5">
+           
+            <select [(ngModel)]="selectedState" name="" id="">
+                <option value="india">India</option>
+                <option value="usa">USA</option>
+                <option value="netherland">Netherland</option>
+                <option value="uae">UAE</option>
+            </select>
+
+            <div class="ms-3 my-3">
+                <p class="">Here, If we select the USE the the div will visible otherwise it will be invisible</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="container border p-5 my-5">
+    <div class="container d-flex justify-content-center">
+        <h4 class="text-center bg-success rounded p-2 text-white col-4 mb-5">*NgFor Directives</h4>
+    </div>
+    <div class="row">
+        <div class="col-3">
+            <ul>
+                <li *ngFor="let city of cityarray">{{city}}</li>
+            </ul>
+
+            
+        </div>
+        <div class="col-3">
+            <label for="" class="mb-1">Choose City</label><br>
+            <select class="mb-5">
+                <option *ngFor="let data of student">{{data.city}}</option>
+            </select>
+
+
+            <div>
+                <h5>This is ngFor directive to fetch data with the help of *ngFor and interpolation techniques</h5>
+            </div>
+        </div>
+        <div class="col-6">
+            <table  class="table table-bordered shadow">
+                <thead>
+                    <tr>
+                        <th>Sr. no</th>
+                        <th>Name</th>
+                        <th>City</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let data of student, let srNo = index">
+                        <td>{{srNo+1}}</td>
+                        <td>{{data.name}}</td>
+                        <td>{{data.city}}</td>
+                        <td>
+                            <span *ngIf="data.isActive">Active</span>
+                            <span *ngIf="!data.isActive">De-Active</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+      
+    </div>
+  
+</div>

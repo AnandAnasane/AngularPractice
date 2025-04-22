@@ -1,0 +1,51 @@
+<div class="container">
+    
+<form [formGroup]="studentForm">
+    <div class="form-group">
+        <label>FirstName</label>
+      <input type="text" formControlName="firstName" class="form-control">
+      @if(studentForm.controls["firstName"].touched && studentForm.controls["firstName"].errors?.['required']){
+        <span class="text-danger">This field is Required</span>
+
+      }
+
+      
+      <br>
+      <label>LastName</label>
+      <input type="text" formControlName="lastName" class="form-control">
+
+      <label >City</label>
+      <input type="text" formControlName="city" class="form-control">
+      
+      <label >State</label>
+      <input type="text" formControlName="state" class="form-control">
+      
+      <label >Gender</label>
+      <input type="text" formControlName="gender"  class="form-control">
+      
+      <label>Email address</label>
+      <input type="email" formControlName="email" class="form-control" >
+
+      @if(studentForm.controls['email'].touched  && studentForm.controls["email"].errors?.["email"]){
+
+        <span class="text-danger"> This email is Invalid</span>
+
+      }
+
+      <br>
+      
+     <label >Password</label>
+      <input type="password" formControlName="password" class="form-control">
+@if(studentForm.controls["password"].touched && studentForm.controls["password"].errors?.["minLength(8)"])
+{
+<span class="text-danger">Password shold be character long</span>
+}
+    </div>
+    
+    <button type="submit" [disabled]="studentForm.invalid" class="btn btn-primary" (click)="onSave()">Submit</button>
+  </form>
+
+</div>
+
+{{formValue | json}}
+

@@ -1,0 +1,98 @@
+<div class="container">
+    <h1 class="text-center bg-secondary p-3 text-white">SERVICE</h1>
+</div>
+<div class="container">
+    <div class="container d-flex justify-content-center">
+        <h4 class="text-center bg-primary rounded p-2 text-white col-6 my-3">Service (API fetcing via service)</h4>
+       
+    </div>
+    <p class="text-danger fs-3">In APIs, we also use API fetching but in the component section, Here We can perform the same operation but with the help of SERVICE </p>
+    <div class="container bg-secondary p-3">
+        <div class="container d-flex justify-content-center">
+            <h4 class="text-center bg-primary rounded p-2 text-white col-6 my-3">GET METHOD using Sevice</h4>
+        </div>
+    
+        <div>
+            <button class="btn btn-success mb-3" (click)="getAllthedetails()">Get User</button>
+        </div>
+        <div>
+            <table class="table table-bordered">
+                <thead class="table-success">
+                    <tr class="text-center bg-success">
+                        <th>NAME</th>
+                        <th>USERNAME</th>
+                        <th>EMAIL</th>
+                        <th>PHONE</th>
+                        <th>WEBSITE</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @for (item of details; track $index) {
+                    <tr>
+                        <td>{{item.name}}</td>
+                        <td>{{item.username}}</td>
+                        <td>{{item.email}}</td>
+                        <td>{{item.phone}}</td>
+                        <td>{{item.website}}</td>
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <hr>
+    <hr><hr>
+
+
+    <div class="container border bg-warning">
+        <div class="container d-flex justify-content-center">
+            <h4 class="text-center bg-primary rounded p-2 text-white col-6 my-3">POST method using Service</h4>
+           
+        </div>
+        <div class="row">
+            <div class="col-7">
+                <h4 class="bg-success p-2 text-white rounded">Department List</h4>
+                <table class="col-12 table-success table-bordered">
+                    <thead class=" text-center">
+                        <tr>
+                            <th>Sr.</th>
+                            <th>Department Name</th>
+                            <th>City</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @for (item of deptList; track $index) {
+                        <tr class="text-center">
+                            <td>{{$index+1}}</td>
+                            <td>{{item.departmentName}}</td>
+                            <td>{{item.departmentLogo}}</td>
+                            <button class="btn btn-primary  m-2" (click)="onEdit(item)">Edit</button>
+                            <button class="btn btn-danger" (click)="onDelete(item.departmentId)">Delete</button>
+                        </tr>
+                    }
+                    </tbody>
+                </table>
+            </div>
+    
+    
+            <div class="col-4">
+                <h4 class="bg-secondary p-2 text-white rounded">New Department</h4>
+                <div class="col-12 border p-3">
+                    Department name
+                    <input type="text" [(ngModel)]="departmentObj.departmentName" class="col-12">
+                    Department City
+                    <input type="text" [(ngModel)]="departmentObj.departmentLogo" class="col-12">
+                    <div class="text-center mt-3">
+                        <button type="reset" class="btn btn-secondary me-3 col-5" (click)="resetform()">Reset</button>
+                        @if(departmentObj.departmentId == 0){
+                            <button type="submit" class="btn btn-success  col-5" (click)="onSave()">Save</button>
+                        }@else {
+                            <button type="submit" class="btn btn-warning  col-5" (click)="onUpdate()">Update</button>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
