@@ -6,6 +6,7 @@ import { DatabindingComponent } from './components/databinding/databinding.compo
 import { StructuralDirComponent } from './components/dir/structural-dir/structural-dir.component';
 import { ComponentDirComponent } from './components/dir/component-dir/component-dir.component';
 import { AttributeDirComponent } from './components/dir/attribute-dir/attribute-dir.component';
+import { IntroComponent } from './components/intro/intro.component';
 
 
 

@@ -18,8 +18,13 @@ import { NgTemplateComponent } from './components/dir/ng-template/ng-template.co
 import { AdvanceReactiveFormComponent } from './components/Forms/advance-reactive-form/advance-reactive-form.component';
 import { PracitceRFormnsComponent } from './components/Forms/pracitce-rformns/pracitce-rformns.component';
 import { NgRxStateComponent } from './components/NgRx/ng-rx-state/ng-rx-state.component';
+import { IntroComponent } from './components/intro/intro.component';
 
 export const routes: Routes = [
+    {
+        path: 'intro',
+        component: IntroComponent
+    },
     {
         path: 'structural-Dir',
         component: StructuralDirComponent
