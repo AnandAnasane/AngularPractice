@@ -22,6 +22,10 @@ import { IntroComponent } from './components/intro/intro.component';
 
 export const routes: Routes = [
     {
+        path: '',
+        component: IntroComponent
+    },
+    {
         path: 'intro',
         component: IntroComponent
     },
